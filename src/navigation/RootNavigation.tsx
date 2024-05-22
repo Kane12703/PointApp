@@ -12,6 +12,7 @@ const RootNavigation = () => {
 
   return (
     <NavigationContainer ref={navigationRef}>
+      <StatusBar translucent backgroundColor="transparent" />
     {/* <AuthNavigator />  */}
     <AppNavigator/>
     </NavigationContainer>
