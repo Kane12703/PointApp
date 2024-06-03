@@ -1,3 +1,3 @@
 export const images = {
-  backgroundHeader: require('./backgroundHeader.png'),
+  backgroundHeader2: require('./backgroundHeader.jpg'),
 };

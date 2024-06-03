@@ -17,6 +17,7 @@ const InputCustom : React.FunctionComponent<InputProps> = props =>{
     value={props.value}
     errorStyle={{height:0}}
     keyboardType={props.keyboardType}
+    secureTextEntry={props.secureTextEntry}
   />
   )
 }
