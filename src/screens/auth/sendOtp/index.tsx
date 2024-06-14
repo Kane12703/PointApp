@@ -25,8 +25,9 @@ const SendOtp = () => {
         <KeyboardAvoidingView style={{flex: 1}}>
           <Text style={styles.textVerify}>Xác thực tài khoản</Text>
           <Text style={styles.textDescribe}>
-            Mã xác thực đã được gửi đến <Text style={styles.emailSend}>thaolkmn@gmail.com</Text> vui lòng kiểm tra và
-            nhập mã :
+            Mã xác thực đã được gửi đến{' '}
+            <Text style={styles.emailSend}>thaolkmn@gmail.com</Text> vui lòng
+            kiểm tra và nhập mã :
           </Text>
           <View style={styles.inputOtpConTainer}>
             <Text style={styles.textTime}>60s</Text>

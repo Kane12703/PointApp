@@ -1,10 +1,17 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import React from 'react';
-import {BigButton, InputCustom} from '../../../components';
+import {BigButton, ButtonGoogle, InputCustom} from '../../../components';
 import styles from './styles';
 import colors from '../../../assets/colors';
 import {NavigationService} from '../../../navigation/NavigationService';
 import {routes} from '../../../constants';
+import { ms } from 'react-native-size-matters';
 
 const Register: React.FC = () => {
   return (
@@ -29,16 +36,29 @@ const Register: React.FC = () => {
         <Text style={styles.labelStylel}>
           <Text style={{color: colors.black_1}}>*</Text> Nhập mật khẩu
         </Text>
-        <InputCustom placeholder="Mật khẩu của bạn" secureTextEntry={true}/>
+        <InputCustom placeholder="Mật khẩu của bạn" secureTextEntry={true} />
         <Text style={styles.labelStylel}>
           <Text style={{color: colors.black_1}}>*</Text> Nhập mật khẩu
         </Text>
-        <InputCustom placeholder="Xác nhận mật khẩu của bạn" secureTextEntry={true} />
+        <InputCustom
+          placeholder="Xác nhận mật khẩu của bạn"
+          secureTextEntry={true}
+        />
       </View>
 
       <View style={styles.buttonContainer}>
-        <BigButton title={'Tiếp tục'} onPress={()=>NavigationService.navigate(routes.SEND_OTP)} />
+        <BigButton
+          title={'Đăng kí'}
+          onPress={() => NavigationService.navigate(routes.SEND_OTP)}
+        />
       </View>
+      <View style={styles.loginOther}>
+        <View style={styles.viewUnderLine} />
+        <Text style={styles.textLoginOther}>Hay đăng nhập</Text>
+        <View style={styles.viewUnderLine} />
+      </View>
+
+      <ButtonGoogle containerStyle={{marginTop:ms(20)}}/>
     </View>
   );
 };
