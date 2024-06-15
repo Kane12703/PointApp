@@ -1,14 +1,37 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from 'react';
+import {Text, View} from 'react-native';
+import styles from './styles';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import AllNotification from './all notification';
+import ElectronicInvoice from './electronic invoice';
+import {routes} from '../../../../constants';
+
+const Tab = createMaterialTopTabNavigator();
 
 const Notification = () => {
   return (
-    <View>
-      <Text>Notification</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Thông báo</Text>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: styles.tabBar,
+          tabBarLabelStyle: styles.tabBarLabel,
+          tabBarIndicatorStyle: styles.tabBarIndicator,
+          tabBarInactiveTintColor: '#808080',
+          tabBarItemStyle: {
+            width: 'auto',
+            height: 39,
+            paddingHorizontal: 10,
+          },
+        }}>
+        <Tab.Screen name={routes.ALLNOTIFICATION} component={AllNotification} />
+        <Tab.Screen
+          name={routes.ELECTRONICINVOICE}
+          component={ElectronicInvoice}
+        />
+      </Tab.Navigator>
     </View>
-  )
-}
+  );
+};
 
-export default Notification
-
-const styles = StyleSheet.create({})
+export default Notification;

@@ -23,4 +23,8 @@ export enum routes {
 
   PROFILE = 'PROFILE',
 
+  ALLNOTIFICATION = 'Tất cả',
+
+  ELECTRONICINVOICE = 'Hóa đơn điện tử'
+
 }
