@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import icons from '../../constants/icons';
 import {routes} from '../../constants';
 import {History, Home, Notification, Profile} from '../../screens/main';
+import {fontFamilySetup} from '../../utils/font';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -25,7 +26,11 @@ const TabIcon: React.FC<TabIconProps> = ({icon, color, name, focused}) => {
       <Text
         style={[
           {color: color},
-          {fontFamily: focused ? 'Urbanist-Bold' : 'Urbanist-Regular'},
+          {
+            fontFamily: focused
+              ? fontFamilySetup.bold
+              : fontFamilySetup.regular,
+          },
         ]}>
         {name}
       </Text>
