@@ -1,8 +1,8 @@
-import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import icons from '../../constants/icons';
+import React from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {routes} from '../../constants';
+import icons from '../../constants/icons';
 import {History, Home, Notification, Profile} from '../../screens/main';
 import {fontFamilySetup} from '../../utils/font';
 
@@ -30,6 +30,7 @@ const TabIcon: React.FC<TabIconProps> = ({icon, color, name, focused}) => {
             fontFamily: focused
               ? fontFamilySetup.bold
               : fontFamilySetup.regular,
+            fontWeight: focused ? '800' : 'normal',
           },
         ]}>
         {name}
@@ -45,7 +46,7 @@ const TabsLayout: React.FC = () => {
         screenOptions={{
           tabBarShowLabel: false,
           tabBarActiveTintColor: 'yellow',
-          tabBarInactiveTintColor: 'black',
+          tabBarInactiveTintColor: '#A6A6A6',
           tabBarStyle: {
             backgroundColor: 'white',
             height: 63,
@@ -59,7 +60,7 @@ const TabsLayout: React.FC = () => {
             headerShown: false,
             tabBarIcon: ({color, focused}) => (
               <TabIcon
-                icon={icons.home}
+                icon={focused ? icons.homefilled : icons.home}
                 color={color}
                 name="Home"
                 focused={focused}
@@ -75,7 +76,7 @@ const TabsLayout: React.FC = () => {
             headerShown: false,
             tabBarIcon: ({color, focused}) => (
               <TabIcon
-                icon={icons.history}
+                icon={focused ? icons.historyfilled : icons.history}
                 color={color}
                 name="History"
                 focused={focused}
@@ -91,7 +92,7 @@ const TabsLayout: React.FC = () => {
             headerShown: false,
             tabBarIcon: ({color, focused}) => (
               <TabIcon
-                icon={icons.notification}
+                icon={focused ? icons.notificationfilled : icons.notification}
                 color={color}
                 name="Notification"
                 focused={focused}
@@ -107,7 +108,7 @@ const TabsLayout: React.FC = () => {
             headerShown: false,
             tabBarIcon: ({color, focused}) => (
               <TabIcon
-                icon={icons.profile}
+                icon={focused ? icons.profilefilled : icons.profile}
                 color={color}
                 name="Profile"
                 focused={focused}
