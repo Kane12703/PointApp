@@ -1,134 +1,125 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
-import {routes} from '../../constants';
-import icons from '../../constants/icons';
-import {History, Home, Notification, Profile} from '../../screens/main';
-import {fontFamilySetup} from '../../utils/font';
+import {
+  BottomTabNavigationOptions,
+  createBottomTabNavigator,
+} from '@react-navigation/bottom-tabs';
+import {Icon, Text, normalize} from '@rneui/themed';
+import React, {FunctionComponent} from 'react';
+import {StyleSheet} from 'react-native';
 import colors from '../../assets/colors';
-import {vs} from 'react-native-size-matters';
+import {routes} from '../../constants';
+import {History, Home, Notification, Profile} from '../../screens/main';
 
 const BottomTabs = createBottomTabNavigator();
 
-interface TabIconProps {
-  icon: any;
-  color: string;
-  name: string;
-  focused: boolean;
-}
+const screenOptions: BottomTabNavigationOptions = {
+  headerShown: false,
+  tabBarShowLabel: true,
+};
 
-const TabIcon: React.FC<TabIconProps> = ({icon, color, name, focused}) => {
+const BottomNavigator: FunctionComponent = () => {
   return (
-    <View style={styles.viewTabIcon}>
-      <Image
-        source={icon}
-        resizeMode="contain"
-        style={[{tintColor: color}, {width: 18, height: 18}]}
+    <BottomTabs.Navigator screenOptions={screenOptions}>
+      <BottomTabs.Screen
+        name={routes.HOME}
+        component={Home}
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text style={focused ? styles.labelFocus : styles.labelUnFocus}>
+              Trang chủ
+            </Text>
+          ),
+          tabBarIcon: ({focused}) => (
+            <Icon
+              name="home-outline"
+              type="ionicon"
+              size={22}
+              color={focused ? colors.yellow : 'gray'}
+            />
+          ),
+        }}
       />
-      <Text
-        style={[
-          {color: color},
-          {
-            fontFamily: focused
-              ? fontFamilySetup.bold
-              : fontFamilySetup.regular,
-            fontWeight: focused ? '800' : 'normal',
-          },
-        ]}>
-        {name}
-      </Text>
-    </View>
+      <BottomTabs.Screen
+        name={routes.HISTORY}
+        component={History}
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text style={focused ? styles.labelFocus : styles.labelUnFocus}>
+              Lịch sử
+            </Text>
+          ),
+          tabBarIcon: ({focused}) => (
+            <Icon
+              name="repeat-outline"
+              type="ionicon"
+              size={22}
+              color={focused ? colors.yellow : 'gray'}
+            />
+          ),
+        }}
+      />
+      <BottomTabs.Screen
+        name={routes.NOTIFICATION}
+        component={Notification}
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text style={focused ? styles.labelFocus : styles.labelUnFocus}>
+              Thông báo
+            </Text>
+          ),
+          tabBarLabelStyle: {color: colors.yellow},
+          tabBarIcon: ({focused}) => (
+            <Icon
+              name="notifications-outline"
+              type="ionicon"
+              size={22}
+              color={focused ? colors.yellow : 'gray'}
+            />
+          ),
+        }}
+      />
+      <BottomTabs.Screen
+        name={routes.PROFILE}
+        component={Profile}
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text style={focused ? styles.labelFocus : styles.labelUnFocus}>
+              Tài khoản
+            </Text>
+          ),
+          tabBarLabelStyle: {color: colors.yellow},
+          tabBarIcon: ({focused}) => (
+            <Icon
+              name="person-circle-outline"
+              type="ionicon"
+              size={22}
+              color={focused ? colors.yellow : 'gray'}
+            />
+          ),
+        }}
+      />
+    </BottomTabs.Navigator>
   );
 };
 
-const TabsLayout: React.FC = () => {
-  return (
-    <>
-      <BottomTabs.Navigator
-        screenOptions={{
-          tabBarShowLabel: false,
-          tabBarActiveTintColor: colors.yellow,
-          tabBarInactiveTintColor: colors.black,
-          tabBarStyle: {
-            backgroundColor: colors.white,
-            height: vs(39),
-          },
-        }}>
-        <BottomTabs.Screen
-          name={routes.HOME}
-          component={Home}
-          options={{
-            title: 'Home',
-            headerShown: false,
-            tabBarIcon: ({color, focused}) => (
-              <TabIcon
-                icon={focused ? icons.homefilled : icons.home}
-                color={color}
-                name="Home"
-                focused={focused}
-              />
-            ),
-          }}
-        />
-        <BottomTabs.Screen
-          name={routes.HISTORY}
-          component={History}
-          options={{
-            title: 'History',
-            headerShown: false,
-            tabBarIcon: ({color, focused}) => (
-              <TabIcon
-                icon={focused ? icons.historyfilled : icons.history}
-                color={color}
-                name="History"
-                focused={focused}
-              />
-            ),
-          }}
-        />
-        <BottomTabs.Screen
-          name={routes.NOTIFICATION}
-          component={Notification}
-          options={{
-            title: 'Notification',
-            headerShown: false,
-            tabBarIcon: ({color, focused}) => (
-              <TabIcon
-                icon={focused ? icons.notificationfilled : icons.notification}
-                color={color}
-                name="Notification"
-                focused={focused}
-              />
-            ),
-          }}
-        />
-        <BottomTabs.Screen
-          name={routes.PROFILE}
-          component={Profile}
-          options={{
-            title: 'Profile',
-            headerShown: false,
-            tabBarIcon: ({color, focused}) => (
-              <TabIcon
-                icon={focused ? icons.profilefilled : icons.profile}
-                color={color}
-                name="Profile"
-                focused={focused}
-              />
-            ),
-          }}
-        />
-      </BottomTabs.Navigator>
-    </>
-  );
-};
-
-export default TabsLayout;
-
+export default BottomNavigator;
 const styles = StyleSheet.create({
-  viewTabIcon: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 2,
+  tabContainer: {
+    position: 'absolute',
+    width: '90%',
+    borderRadius: 12,
+    left: '5%',
+    bottom: 20,
+    backgroundColor: 'white',
+    height: 60,
+  },
+  labelFocus: {
+    fontSize: normalize(10),
+    color: colors.yellow,
+    paddingBottom: normalize(5),
+  },
+  labelUnFocus: {
+    fontSize: normalize(10),
+    color: 'gray',
+    paddingBottom: normalize(5),
   },
 });

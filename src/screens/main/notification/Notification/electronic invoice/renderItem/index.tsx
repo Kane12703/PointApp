@@ -2,7 +2,7 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import styles from './styles';
 
-const RenderItem: React.FC<DataProps> = ({
+const RenderItemE: React.FC<DataProps> = ({
   id,
   image,
   title,
@@ -33,7 +33,7 @@ const RenderItem: React.FC<DataProps> = ({
   );
 };
 
-export default RenderItem;
+export default RenderItemE;
 
 interface DataProps {
   id: number;
@@ -43,7 +43,7 @@ interface DataProps {
   time: string;
 }
 
-export const dataA: DataProps[] = [
+export const dataE: DataProps[] = [
   {
     id: 1,
     image: 'https://www.bachhoaxanh.com/static/icon-192x192.png',
