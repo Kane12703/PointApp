@@ -26,11 +26,11 @@ const styles = StyleSheet.create({
     marginBottom: ms(6),
   },
   image: {
-    width: s(33),
-    height: vs(33),
-    borderRadius: normalize(26),
+    width: normalize(36),
+    height: normalize(36),
+    borderRadius: normalize(100),
     alignSelf: 'flex-end',
-    marginBottom: ms(28),
+    marginBottom: ms(25),
   },
   content: {
     width: s(293),

@@ -7,7 +7,7 @@ import colors from '../../../../../assets/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e2e2e2',
+    backgroundColor: '#f2f2f2',
   },
   title: {
     fontFamily: fontFamilySetup.bold,

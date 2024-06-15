@@ -5,6 +5,8 @@ import {routes} from '../../constants';
 import icons from '../../constants/icons';
 import {History, Home, Notification, Profile} from '../../screens/main';
 import {fontFamilySetup} from '../../utils/font';
+import colors from '../../assets/colors';
+import {vs} from 'react-native-size-matters';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -21,7 +23,7 @@ const TabIcon: React.FC<TabIconProps> = ({icon, color, name, focused}) => {
       <Image
         source={icon}
         resizeMode="contain"
-        style={[{tintColor: color}, {width: 24, height: 24}]}
+        style={[{tintColor: color}, {width: 18, height: 18}]}
       />
       <Text
         style={[
@@ -45,11 +47,11 @@ const TabsLayout: React.FC = () => {
       <BottomTabs.Navigator
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: 'yellow',
-          tabBarInactiveTintColor: '#A6A6A6',
+          tabBarActiveTintColor: colors.yellow,
+          tabBarInactiveTintColor: colors.black,
           tabBarStyle: {
-            backgroundColor: 'white',
-            height: 63,
+            backgroundColor: colors.white,
+            height: vs(39),
           },
         }}>
         <BottomTabs.Screen
