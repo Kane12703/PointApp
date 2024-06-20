@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
 import {
   CardStyleInterpolators,
@@ -8,10 +8,11 @@ import {
 
 import BottomNavigator from './BottomNavigator';
 
-import {routes} from '../../constants';
+import { routes } from '../../constants';
 import {
-  homeScreens,
   historyScreens,
+  homeScreens,
+  notificationScreens,
   profileScreens,
 } from '../../screens/main';
 import { Screen } from '../../types/common';
@@ -30,6 +31,7 @@ const mainScreens: Screen[] = [
   },
   ...homeScreens,
   ...historyScreens,
+  ...notificationScreens,
   ...profileScreens,
 ];
 
