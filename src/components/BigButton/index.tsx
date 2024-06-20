@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Button, ButtonProps } from '@rneui/themed'
 import styles from './styles'
+import { BigButtonProps } from './types'
 
 
 
-const BigButton : React.FunctionComponent<ButtonProps> = (props) => {
+const BigButton : React.FunctionComponent<BigButtonProps> = (props) => {
   return (
-    <Button onPress={props.onPress} title={props.title} buttonStyle={props.buttonStyle|| styles.buttonStyle} titleStyle={props.titleStyle|| styles.titleStyle}>
-    </Button>
+    <TouchableOpacity
+    onPress={props.onPressButton}
+    style={[styles.containerStyle,props.containerStyle,]}>
+
+    <Text style={[styles.titleStyle,props.textStyle,]}>
+      {props.title}
+    </Text>
+  </TouchableOpacity>
   )
 }
 export default BigButton

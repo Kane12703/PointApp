@@ -23,14 +23,13 @@ const Login: React.FC = () => {
         <InputCustom placeholder="Mật khẩu của bạn" secureTextEntry={true} />
         <View style={styles.forgetContainer}>
           <View></View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>NavigationService.navigate(routes.FORGOT_PASSWORD)}>
             <Text style={styles.textForget}>Quên mật khẩu ?</Text>
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.buttonContainer}>
-        <BigButton title={'Đăng nhập'} />
-      </View>
+        <BigButton containerStyle={styles.buttonContainer} title={'Đăng nhập'} />
+
       <View style={styles.rememberContainer}>
         <Text style={styles.textRemember}>Chưa có tài khoản ?</Text>
         <TouchableOpacity>

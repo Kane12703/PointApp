@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
 
   },
   buttonContainer:{
-    width:'100%',
     marginTop:ms(15)
   },
   inputContainer:{
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'space-between',
-    marginTop:normalize(15)
+    marginTop:ms(15)
   },
   textLoginOther:{
     fontSize:normalize(12),

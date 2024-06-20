@@ -22,8 +22,7 @@ const styles = StyleSheet.create({
 
   },
   buttonContainer:{
-    width:'100%',
-    marginTop:normalize(20)
+    marginTop:ms(20)
   },
   inputContainer:{
     width:'100%'

@@ -11,7 +11,6 @@ import HeaderHome from './components/header';
 import NavHome from './components/nav';
 
 const Home = () => {
-
   return (
     <View style={styles.container}>
       <HeaderHome/>
