@@ -7,7 +7,8 @@ import colors from '../../../../../assets/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: colors.gray_6,
+    paddingHorizontal:ms(15)
   },
   title: {
     fontFamily: fontFamilySetup.bold,
@@ -23,8 +24,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: normalize(163),
-    height: normalize(163),
+    width: s(163),
+    height: vs(163),
     marginBottom: ms(22),
   },
   textNotificationEmpty: {

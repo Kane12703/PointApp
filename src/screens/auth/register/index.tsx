@@ -45,13 +45,12 @@ const Register: React.FC = () => {
           secureTextEntry={true}
         />
       </View>
-
-      <View style={styles.buttonContainer}>
         <BigButton
+          containerStyle={styles.buttonContainer}
           title={'Đăng kí'}
-          onPress={() => NavigationService.navigate(routes.SEND_OTP)}
+          onPressButton={() => NavigationService.navigate(routes.SEND_OTP)}
         />
-      </View>
+
       <View style={styles.loginOther}>
         <View style={styles.viewUnderLine} />
         <Text style={styles.textLoginOther}>Hay đăng nhập</Text>

@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
 
   },
   container: {
+    width:'100%',
     borderWidth: normalize(1),
     borderRadius: normalize(6),
     borderColor:colors.gray_3,

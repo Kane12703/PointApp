@@ -7,7 +7,6 @@ import colors from '../../../../../../assets/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: ms(6),
   },
   title: {
     fontFamily: fontFamilySetup.medium,
@@ -26,14 +25,13 @@ const styles = StyleSheet.create({
     marginBottom: ms(6),
   },
   image: {
-    width: normalize(36),
-    height: normalize(36),
+    width: s(36),
+    height: vs(36),
     borderRadius: normalize(100),
     alignSelf: 'flex-end',
     marginBottom: ms(25),
   },
   content: {
-    width: s(293),
     backgroundColor: colors.white,
     marginLeft: ms(9),
     paddingHorizontal: ms(12),

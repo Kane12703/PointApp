@@ -5,6 +5,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import AllNotification from './all notification';
 import ElectronicInvoice from './electronic invoice';
 import {routes} from '../../../../constants';
+import { ms, vs } from 'react-native-size-matters';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -20,8 +21,8 @@ const Notification = () => {
           tabBarInactiveTintColor: '#808080',
           tabBarItemStyle: {
             width: 'auto',
-            height: 39,
-            paddingHorizontal: 10,
+            height: vs(39),
+            paddingHorizontal: ms(10),
           },
         }}>
         <Tab.Screen name={routes.ALLNOTIFICATION} component={AllNotification} />

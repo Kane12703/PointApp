@@ -18,8 +18,7 @@ const RenderItemE: React.FC<DataProps> = ({
           }}
           style={styles.image}
         />
-
-        <View>
+        <View style={{flex:1}}>
           <View style={styles.content}>
             <Text style={styles.title} numberOfLines={2}>
               {title}

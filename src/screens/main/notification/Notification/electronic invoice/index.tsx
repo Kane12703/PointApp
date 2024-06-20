@@ -11,6 +11,7 @@ const ElectronicInvoice = () => {
       {dataE.length > 0 ? (
         <FlatList
           data={dataE}
+          showsVerticalScrollIndicator={false}
           renderItem={({item}) => (
             <RenderItemE
               id={item.id}

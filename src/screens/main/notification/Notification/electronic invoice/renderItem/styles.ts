@@ -1,13 +1,12 @@
 import {normalize} from '@rneui/themed';
 import {StyleSheet} from 'react-native';
-import {ms, s} from 'react-native-size-matters';
+import {ms, s, vs} from 'react-native-size-matters';
 import colors from '../../../../../../assets/colors';
 import {fontFamilySetup} from '../../../../../../utils/font';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: ms(6),
   },
   title: {
     fontFamily: fontFamilySetup.medium,
@@ -26,14 +25,13 @@ const styles = StyleSheet.create({
     marginBottom: ms(6),
   },
   image: {
-    width: normalize(36),
-    height: normalize(36),
+    width: s(36),
+    height: vs(36),
     borderRadius: normalize(100),
     alignSelf: 'flex-end',
     marginBottom: ms(25),
   },
   content: {
-    width: s(293),
     backgroundColor: colors.white,
     marginLeft: ms(9),
     paddingHorizontal: ms(12),

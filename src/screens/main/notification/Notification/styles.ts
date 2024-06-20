@@ -7,12 +7,12 @@ import {fontFamilySetup} from '../../../../utils/font';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.gray_6,
   },
   title: {
     fontFamily: fontFamilySetup.bold,
     fontWeight: 'bold',
-    fontSize: normalize(26),
+    fontSize: normalize(25),
     color: colors.black,
     marginLeft: ms(12),
     marginTop: ms(30),
@@ -20,10 +20,14 @@ const styles = StyleSheet.create({
   },
   tabBar: {
     height: vs(36),
+    backgroundColor:colors.gray_6,
+    borderBottomWidth:0,
+    shadowColor:'#fff'
+   
   },
   tabBarLabel: {
     textTransform: 'none',
-    fontSize: normalize(16),
+    fontSize: normalize(13),
     fontFamily: fontFamilySetup.semi_bold,
   },
   tabBarIndicator: {

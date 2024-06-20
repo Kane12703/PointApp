@@ -9,6 +9,7 @@ const AllNotification = () => {
       {dataA.length > 0 ? (
         <FlatList
           data={dataA}
+          showsVerticalScrollIndicator={false}
           renderItem={({item}) => (
             <RenderItem
               id={item.id}

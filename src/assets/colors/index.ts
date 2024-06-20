@@ -8,6 +8,7 @@ export default {
   gray_3:'#CDC9C9',
   gray_4:'#F0F0F0',
   gray_5:'#7A97A9',
+  gray_6:'#f2f2f2',
   blue_1:'#043D7D',
   blue_2:'#1265C6',
   colorIcon_1:'#D24150',
