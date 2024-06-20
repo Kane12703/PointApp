@@ -11,15 +11,20 @@ export enum routes {
   CREATE_NEW_PASSWORD = 'CREATE_NEW_PASSWORD',
 
   BOTTOM_TAB = 'bottom_tab',
-  HOME = 'HOME',
 
   FORUM = 'FORUM',
   APP_NAVIGATOR = 'APP_NAVIGATOR',
 
-  PROFILE = 'PROFILE',
+  HOME = 'HOME',
 
   HISTORY = 'HISTORY',
 
+  NOTIFICATION = 'NOTIFICATION',
 
+  PROFILE = 'PROFILE',
+
+  ALLNOTIFICATION = 'Tất cả',
+
+  ELECTRONICINVOICE = 'Hóa đơn điện tử'
 
 }
